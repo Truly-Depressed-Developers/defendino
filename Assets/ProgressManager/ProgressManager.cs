@@ -1,7 +1,8 @@
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ProgressManager : MonoBehaviour {
     // Start is called before the first frame update
@@ -9,6 +10,7 @@ public class ProgressManager : MonoBehaviour {
     public static ProgressManager instance;
 
     public event Action<float> onLevelUp;
+    public event Action<float> onGameOver;
 
     public int currentLevel { get; private set; }
     public float currentExp { get; private set; }
