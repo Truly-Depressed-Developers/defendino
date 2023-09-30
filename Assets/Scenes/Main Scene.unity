@@ -592,8 +592,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHealth: 500
-  healthBar: {fileID: 0}
-  deathAction: 0
+  healthBar: {fileID: 736661401}
+  deathAction: 2
   damageSources:
     serializedVersion: 2
     m_Bits: 128

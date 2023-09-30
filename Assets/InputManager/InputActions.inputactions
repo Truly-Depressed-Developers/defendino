@@ -6,9 +6,18 @@
             "id": "2adf5c0b-df07-4e63-9536-aae64eaab950",
             "actions": [
                 {
+                    "name": "Attack",
+                    "type": "Button",
+                    "id": "88293a36-22dd-46fa-a6a4-60f298579153",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
                     "name": "Left",
                     "type": "Button",
-                    "id": "0f1a6921-6ecd-44e7-a95d-55ac24e69c90",
+                    "id": "445d8a77-204e-440e-9ce5-55b885063565",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -17,16 +26,7 @@
                 {
                     "name": "Right",
                     "type": "Button",
-                    "id": "8065a9a5-7ac0-44cd-9748-a9ba56eaf2f8",
-                    "expectedControlType": "Button",
-                    "processors": "",
-                    "interactions": "",
-                    "initialStateCheck": false
-                },
-                {
-                    "name": "Attack",
-                    "type": "Button",
-                    "id": "88293a36-22dd-46fa-a6a4-60f298579153",
+                    "id": "2ff52d6e-6609-465b-af0e-ed9b5c84cb11",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -36,7 +36,18 @@
             "bindings": [
                 {
                     "name": "",
-                    "id": "e0c3d74d-4359-4d0a-8fef-0645d23f4ada",
+                    "id": "96d7eddf-10fe-4505-af76-04b72e4bce5c",
+                    "path": "<Keyboard>/space",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Attack",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "c97cb863-31f6-45e0-ab2c-065a7ac7a77f",
                     "path": "<Keyboard>/a",
                     "interactions": "",
                     "processors": "",
@@ -47,7 +58,7 @@
                 },
                 {
                     "name": "",
-                    "id": "16cdf2c6-02a8-4ef9-9f45-ca4453030404",
+                    "id": "903bb7db-f826-45ea-bb9f-b83fe74652bc",
                     "path": "<Keyboard>/leftArrow",
                     "interactions": "",
                     "processors": "",
@@ -58,7 +69,7 @@
                 },
                 {
                     "name": "",
-                    "id": "a32eae23-4771-46ce-9e2d-dc44272a6bfe",
+                    "id": "1baf4205-83c4-447b-a04b-1a36c2e6c9d1",
                     "path": "<Keyboard>/d",
                     "interactions": "",
                     "processors": "",
@@ -69,23 +80,12 @@
                 },
                 {
                     "name": "",
-                    "id": "85ea468f-7f47-4ba6-974d-5dd76149138d",
+                    "id": "580ce3b0-559e-414d-8794-ed942810488a",
                     "path": "<Keyboard>/rightArrow",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Right",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
-                    "id": "96d7eddf-10fe-4505-af76-04b72e4bce5c",
-                    "path": "<Keyboard>/space",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Attack",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
