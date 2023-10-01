@@ -32,9 +32,12 @@ public class UpdateManager : MonoBehaviour {
         for (int i = 0; i < cardCount; i++) {
             options[i].SetUpgradeCard(tempCards[i]);
         }
+
+        Time.timeScale = 0;
     }
 
     public void Select(UpgradeType upgradeType) {
+        Time.timeScale = 1;
         canvas.gameObject.SetActive(false);
         OnUpdateChoose.Invoke(upgradeType);
     }
