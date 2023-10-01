@@ -4900,7 +4900,7 @@ GameObject:
   - component: {fileID: 1464587658607230253}
   - component: {fileID: 7444413376532616428}
   m_Layer: 6
-  m_Name: ConeDino
+  m_Name: StretusDino
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4952,6 +4952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   weapon: {fileID: 2697495048645858122}
+  particleSystem: {fileID: 0}
 --- !u!50 &1464587658607230253
 Rigidbody2D:
   serializedVersion: 4
@@ -5009,7 +5010,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2981986314262556894}
-  - component: {fileID: 9085661935965435790}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -5032,15 +5032,48 @@ Transform:
   m_Children:
   - {fileID: 678968849255277279}
   - {fileID: 6217931398461642235}
+  - {fileID: 8693408173627369269}
   m_Father: {fileID: 8289671348884767280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &9085661935965435790
+--- !u!1 &7689990707946365477
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8693408173627369269}
+  - component: {fileID: 2326929446475851059}
+  m_Layer: 6
+  m_Name: Sprite
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8693408173627369269
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7689990707946365477}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.23, y: 0.23, z: 0.23}
+  m_ConstrainProportionsScale: 1
+  m_Children: []
+  m_Father: {fileID: 2981986314262556894}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &2326929446475851059
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4203508475909374714}
+  m_GameObject: {fileID: 7689990707946365477}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -5075,8 +5108,8 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 48e93eef0688c4a259cb0eddcd8661f7, type: 3}
-  m_Color: {r: 0.14412853, g: 0.9811321, b: 0.22836861, a: 1}
+  m_Sprite: {fileID: 21300000, guid: b934345993d1bf342afb253196d1bd51, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -5097,6 +5130,10 @@ PrefabInstance:
     - target: {fileID: 4652956917708498762, guid: b2c1a306f3c1b5d47bb5981e81cb3aaa, type: 3}
       propertyPath: m_LocalPosition.z
       value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4667928071047258085, guid: b2c1a306f3c1b5d47bb5981e81cb3aaa, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4667928071047258087, guid: b2c1a306f3c1b5d47bb5981e81cb3aaa, type: 3}
       propertyPath: m_Layer
