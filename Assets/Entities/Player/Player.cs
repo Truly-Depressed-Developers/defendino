@@ -1,4 +1,5 @@
 using System;
+using System.ComponentModel;
 using DamageSystem;
 using Unity.VisualScripting.Dependencies.NCalc;
 using UnityEngine;
@@ -15,14 +16,20 @@ namespace Entities.Player {
         private Rigidbody2D rb;
         private float lastPressedTurn;
         private float turn;
+        [Tooltip("Check if there is animation controller above weapon triggering attack")]
+        [SerializeField] private bool disableInputAttackTrigger = false;
 
         private void Start() {
             weaponDamageDealer = GetComponent<WeaponDamageDealer>();
             rb = GetComponent<Rigidbody2D>();
-            InputManager.actions.Player.Attack.started += context => weaponDamageDealer.OnAttack();
+            if (!disableInputAttackTrigger) {
+                InputManager.actions.Player.Attack.started += context => weaponDamageDealer.OnAttack();
+            }
             InputManager.actions.Player.Left.started += context => turn = -1;
             InputManager.actions.Player.Right.started += context => turn = 1;
-            spriteToCounterrotateInitialScaleX = spriteToCounterrotate.localScale.x;
+            if (spriteToCounterrotate) {
+                spriteToCounterrotateInitialScaleX = spriteToCounterrotate.localScale.x;
+            }
         }
 
         public void OnAttackEnd() {
@@ -52,16 +59,18 @@ namespace Entities.Player {
                 transform.eulerAngles.y,
                 transform.eulerAngles.z - currentSpeed
             );
-            spriteToCounterrotate.eulerAngles = new Vector3(
-                spriteToCounterrotate.eulerAngles.x,
-                spriteToCounterrotate.eulerAngles.y,
-                spriteToCounterrotate.eulerAngles.z + currentSpeed
-            );
-            spriteToCounterrotate.localScale = new Vector3(
-                transform.eulerAngles.z % 360 <= 180 ? spriteToCounterrotateInitialScaleX : -spriteToCounterrotateInitialScaleX,
-                spriteToCounterrotate.localScale.y,
-                spriteToCounterrotate.localScale.z
-            );
+            if (spriteToCounterrotate) {
+                spriteToCounterrotate.eulerAngles = new Vector3(
+                    spriteToCounterrotate.eulerAngles.x,
+                    spriteToCounterrotate.eulerAngles.y,
+                    spriteToCounterrotate.eulerAngles.z + currentSpeed
+                );
+                spriteToCounterrotate.localScale = new Vector3(
+                    transform.eulerAngles.z % 360 <= 180 ? spriteToCounterrotateInitialScaleX : -spriteToCounterrotateInitialScaleX,
+                    spriteToCounterrotate.localScale.y,
+                    spriteToCounterrotate.localScale.z
+                );
+            }
 
             lastPressedTurn = turn;
         }

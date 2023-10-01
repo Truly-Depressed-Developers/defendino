@@ -22,7 +22,9 @@ namespace DamageSystem.Weapons.MeleeWeapon {
 
         public override void Attack() {
             collider.enabled = true;
-            animator.Play("Attack");
+            if (animator) {
+                animator.Play("Attack");
+            }
         }
 
         private void _OnAttackEnd() {
