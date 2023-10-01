@@ -17,6 +17,15 @@ namespace Entities.Enemy {
         void Start() {
             rb = GetComponent<Rigidbody2D>();
             weaponDamageDealer = GetComponent<WeaponDamageDealer>();
+            if(transform.position.x > 0)
+            {
+               transform.localScale = new Vector3(
+                    -transform.localScale.x,
+                    transform.localScale.y,
+                    transform.localScale.z
+                );
+            }
+
         }
 
         // Update is called once per frame
