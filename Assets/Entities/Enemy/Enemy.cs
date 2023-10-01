@@ -1,4 +1,4 @@
-using DamageSystem;
+﻿using DamageSystem;
 using UnityEngine;
 
 namespace Entities.Enemy {
@@ -11,6 +11,7 @@ namespace Entities.Enemy {
         Rigidbody2D rb;
         private bool stopped = false;
         private float lastAttackTime = 0f;
+        [SerializeField] public float expOnKill { get; private set; } = 5f;
 
         // Start is called before the first frame update
         void Start() {
