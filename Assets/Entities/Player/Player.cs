@@ -21,6 +21,7 @@ namespace Entities.Player {
 
         private void Start() {
             weaponDamageDealer = GetComponent<WeaponDamageDealer>();
+            Debug.Log(weaponDamageDealer);
             rb = GetComponent<Rigidbody2D>();
             if (!disableInputAttackTrigger) {
                 InputManager.actions.Player.Attack.started += context => weaponDamageDealer.OnAttack();
@@ -30,6 +31,12 @@ namespace Entities.Player {
             if (spriteToCounterrotate) {
                 spriteToCounterrotateInitialScaleX = spriteToCounterrotate.localScale.x;
             }
+        }
+
+        public void Attack() {
+            Debug.Log("ATTACK");
+            Debug.Log(weaponDamageDealer);
+            weaponDamageDealer.OnAttack();
         }
 
         public void OnAttackEnd() {
