@@ -11,7 +11,6 @@ namespace DamageSystem {
 
         public void OnAttack() {
             if (!weapon) return;
-
             weapon.Attack();
         }
     }
