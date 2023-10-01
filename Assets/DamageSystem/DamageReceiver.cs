@@ -1,6 +1,7 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using DamageSystem.Health;
+using Entities.Enemy;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,10 +11,11 @@ namespace DamageSystem {
         [SerializeField] private HealthBar healthBar;
         [SerializeField] private DeathAction deathAction = DeathAction.RespawnAtInitialPosition;
         [SerializeField] private LayerMask damageSources;
-        [SerializeField] private UnityEvent OnDeath;
-        [SerializeField] private UnityEvent<float> OnDamageReceived;
+        [SerializeField] public UnityEvent<float> OnDeath;
+        [SerializeField] public UnityEvent<float> OnDamageReceived;
         private float health;
         private Vector3 initialPosition;
+        private Enemy enemyComponent;
 
         private enum DeathAction {
             RespawnAtInitialPosition,
@@ -25,6 +27,8 @@ namespace DamageSystem {
             health = maxHealth;
             if (healthBar) healthBar.SetMaxHealth(maxHealth);
             initialPosition = transform.position;
+
+            enemyComponent = GetComponent<Enemy>();
         }
 
         private void OnCollisionEnter2D(Collision2D other) {
@@ -54,7 +58,12 @@ namespace DamageSystem {
             if (healthBar) healthBar.SetHealth(health);
 
             void Die() {
-                OnDeath.Invoke();
+                float exp = 0;
+                if (enemyComponent != null) {
+                    exp = enemyComponent.expOnKill;
+                }
+
+                OnDeath.Invoke(exp);
 
                 if (deathAction == DeathAction.Destroy) {
                     Destroy(gameObject);
