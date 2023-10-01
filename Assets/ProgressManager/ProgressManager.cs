@@ -39,6 +39,7 @@ public class ProgressManager : MonoBehaviour {
     public void BeginGame() => StartCoroutine(BeginNextWave());
 
     public void addExp(float exp) {
+        exp *= 1.5f;
         currentExp += exp;
 
         while(currentExp >= expNeededToLevel) {

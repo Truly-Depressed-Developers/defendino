@@ -382,6 +382,10 @@ PrefabInstance:
       value: 1.7
       objectReference: {fileID: 0}
     - target: {fileID: 3679300315688578058, guid: 4d9fc652bdc668445afe35a228676484, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3679300315688578058, guid: 4d9fc652bdc668445afe35a228676484, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
@@ -686,6 +690,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3121363039323231748, guid: a052dbd628ed72444872c5ec11a201d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 3458963572122156980, guid: a052dbd628ed72444872c5ec11a201d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82
+      objectReference: {fileID: 0}
+    - target: {fileID: 4462201735952867456, guid: a052dbd628ed72444872c5ec11a201d0, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -82
+      objectReference: {fileID: 0}
     - target: {fileID: 5209781385827100024, guid: a052dbd628ed72444872c5ec11a201d0, type: 3}
       propertyPath: OnUpdateChoose.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -708,7 +724,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9213610808709926168, guid: a052dbd628ed72444872c5ec11a201d0, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1642,6 +1658,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayersController
       objectReference: {fileID: 0}
+    - target: {fileID: 5080477318457294741, guid: b0da28842ca02a3479ddf63e8c7aa617, type: 3}
+      propertyPath: playerA
+      value: 
+      objectReference: {fileID: 7643620829620909755, guid: ed364dae04d2be84697e5b50bdcd9477, type: 3}
+    - target: {fileID: 5080477318457294741, guid: b0da28842ca02a3479ddf63e8c7aa617, type: 3}
+      propertyPath: playerB
+      value: 
+      objectReference: {fileID: 7643620829620909755, guid: d5800302a111fa3479291d5f60755a81, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1781,7 +1805,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123889784738653809, guid: a6ff9a561b737a7498631f3a0272930c, type: 3}
       propertyPath: m_text
-      value: Update2
+      value: Stegosaurus Spike Upgrade
       objectReference: {fileID: 0}
     - target: {fileID: 8182499687662667616, guid: a6ff9a561b737a7498631f3a0272930c, type: 3}
       propertyPath: m_Name
@@ -2049,7 +2073,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7123889784738653809, guid: a6ff9a561b737a7498631f3a0272930c, type: 3}
       propertyPath: m_text
-      value: Update3
+      value: Stegosaurus Spike Upgrade
       objectReference: {fileID: 0}
     - target: {fileID: 8182499687662667616, guid: a6ff9a561b737a7498631f3a0272930c, type: 3}
       propertyPath: m_Name

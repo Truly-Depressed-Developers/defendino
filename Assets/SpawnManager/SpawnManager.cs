@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using DamageSystem;
+using Entities.Player;
 using UnityEngine;
 
 public class SpawnManager : MonoBehaviour {

@@ -7,13 +7,23 @@ using UnityEngine;
 namespace Entities.Player {
     public class PlayersController : MonoBehaviour {
         private List<Player> players;
-        [SerializeField] private Player secondPlayer;
+        [SerializeField] public Player playerA;
+        [SerializeField] public Player playerB;
         [SerializeField] private float attackInterval = 1.5f;
         private float lastAttackTime;
+        public static PlayersController instance;
+
+        private void Awake() {
+            if(instance == null) {
+                instance = this;
+            }
+        }
 
         private void Start() {
             players = GetComponentsInChildren<Player>().ToList();
-            AddPlayer(secondPlayer);
+            // AddPlayer(secondPlayer);
+            InputManager.actions.Player.SpawnA.started += context => AddPlayer(playerA);
+            InputManager.actions.Player.SpawnB.started += context => AddPlayer(playerB);
         }
 
         public void AddPlayer(Player player) {
