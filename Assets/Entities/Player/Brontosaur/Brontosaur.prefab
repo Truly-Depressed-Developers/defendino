@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3097778606373495931}
   - component: {fileID: 1464587658607230253}
   m_Layer: 6
-  m_Name: Stretus
+  m_Name: Brontosaur
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -52,6 +52,7 @@ MonoBehaviour:
   deceleration: 0.2
   maxRotationSpeed: 2
   spriteToCounterrotate: {fileID: 2981986314262556894}
+  disableInputAttackTrigger: 0
 --- !u!114 &3097778606373495931
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -122,7 +123,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 2.79, z: 0}
   m_LocalScale: {x: 0.16, y: 0.16, z: 0.16}
   m_ConstrainProportionsScale: 1
-  m_Children: []
+  m_Children:
+  - {fileID: 462091821039041681}
   m_Father: {fileID: 8289671348884767280}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &9085661935965435790
@@ -166,7 +168,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: b934345993d1bf342afb253196d1bd51, type: 3}
+  m_Sprite: {fileID: 21300000, guid: ecd6a2bf79595b247a742c4fbfc0a733, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
