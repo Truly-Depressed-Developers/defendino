@@ -1,55 +1,56 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
+using static Unity.Burst.Intrinsics.X86.Avx;
 
 public class UpdateManager : MonoBehaviour {
     public static UpdateManager instance;
     [SerializeField] Transform canvas;
+    List<Option> options;
+    int cardCount = 3;
 
-    [SerializeField] GameObject update1;
-    [SerializeField] GameObject update2;
-    [SerializeField] GameObject update3;
+    List<UpgradeCard> upgradeCards = new List<UpgradeCard>();
 
-    public UnityEvent<string> OnUpdateChoose;
+    public UnityEvent<UpgradeType> OnUpdateChoose;
 
-
-    Option option1;
-    Option option2;
-    Option option3;
-
-    // Start is called before the first frame update
     void Start() {
-        UpdateManager.instance = this;        
+        UpdateManager.instance = this;
 
-        option1 = update1.GetComponent<Option>();
-        option2 = update2.GetComponent<Option>();
-        option3 = update3.GetComponent<Option>();
+        upgradeCards = Resources.LoadAll<UpgradeCard>("Upgrades/").ToList();
+        options = GetComponentsInChildren<Option>().ToList();
 
-        option1.OnChoose.AddListener(Close);
-        option2.OnChoose.AddListener(Close);
-        option3.OnChoose.AddListener(Close);
-
-        //Open("Jol1", "Jol2", "Jol3");
+        Open();
     }
 
-    // Update is called once per frame
-    void Update() {
-
-    }
-
-    public void Open(string optionTXT1, string optionTXT2, string optionTXT3) {
+    public void Open() {
         canvas.gameObject.SetActive(true);
 
-        option1.ChangeText(optionTXT1);
-        option2.ChangeText(optionTXT2);
-        option3.ChangeText(optionTXT3);
+        List<UpgradeCard> tempCards = ThreeRandomCardsData();
 
-
+        for (int i = 0; i < cardCount; i++) {
+            options[i].SetUpgradeCard(tempCards[i]);
+        }
+        Debug.Log(tempCards.Count);
     }
 
-    public void Close(string optionTXT) {
+    public void Select(UpgradeType upgradeType) {
         canvas.gameObject.SetActive(false);
-        OnUpdateChoose.Invoke(optionTXT);
+        OnUpdateChoose.Invoke(upgradeType);
+    }
+
+    private List<UpgradeCard> ThreeRandomCardsData() {
+        List<UpgradeCard> compy = new List<UpgradeCard>(upgradeCards);
+        List<UpgradeCard> returnList = new List<UpgradeCard>();
+
+        for(int i = 0; i < cardCount; i++) {
+            Debug.Log(compy.Count);
+            int rand = Random.Range(0, compy.Count);
+            returnList.Add(compy[rand]);
+            compy.RemoveAt(rand);
+        }
+
+        return returnList;
     }
 }
