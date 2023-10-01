@@ -20,8 +20,8 @@ public class UpdateManager : MonoBehaviour {
 
         upgradeCards = Resources.LoadAll<UpgradeCard>("Upgrades/").ToList();
         options = GetComponentsInChildren<Option>().ToList();
-
-        Open();
+        ProgressManager.instance.onLevelUp += _ => Open();
+        canvas.gameObject.SetActive(false);
     }
 
     public void Open() {
@@ -32,7 +32,6 @@ public class UpdateManager : MonoBehaviour {
         for (int i = 0; i < cardCount; i++) {
             options[i].SetUpgradeCard(tempCards[i]);
         }
-        Debug.Log(tempCards.Count);
     }
 
     public void Select(UpgradeType upgradeType) {
