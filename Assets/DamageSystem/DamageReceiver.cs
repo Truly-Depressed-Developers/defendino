@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using DamageSystem.Health;
 using UnityEngine;
@@ -12,6 +12,7 @@ namespace DamageSystem {
         [SerializeField] private LayerMask damageSources;
         [SerializeField] private UnityEvent OnDeath;
         [SerializeField] private UnityEvent<float> OnDamageReceived;
+
         private float health;
         private Vector3 initialPosition;
 
@@ -53,7 +54,7 @@ namespace DamageSystem {
 
             if (healthBar) healthBar.SetHealth(health);
 
-            void Die() {
+            void Die() {               
                 OnDeath.Invoke();
 
                 if (deathAction == DeathAction.Destroy) {
